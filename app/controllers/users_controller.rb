@@ -32,7 +32,15 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+    
+  def followings
+    @user = User.find(params[:id])
   end
+  
+  def followers
+    @user = User.find(params[:id])
+  end  
+end
 
   private
 
@@ -44,13 +52,5 @@ class UsersController < ApplicationController
   def correct_user
     @user = User.find(params[:id])
     redirect_to root_path if @user != current_user
-  end
-  
-  def followings
-    @user = User.find(params[:id])
-  end
-  
-  def followers
-    @user = User.find(params[:id])
   end
 end

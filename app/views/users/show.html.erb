@@ -16,4 +16,12 @@
       </ol>
     <% end %>
   </div>
+  <div class="col-md-8">
+    <% if @user.followings.any? %>
+      <h3>followings (<%= User.find(params[:id]) %>)</h3>
+      <ol class="microposts">
+        <%= render @followings %>
+      </ol>
+    <% end %>
+  </div>  
 </div>

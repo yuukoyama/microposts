@@ -1,0 +1,5 @@
+<h3>フォロワー一覧</h3>
+<% @users.each do |user| %>
+  <%= link_to user.name, user %>
+  <br>
+<% end %>

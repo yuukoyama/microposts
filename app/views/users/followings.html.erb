@@ -1,5 +1,13 @@
-<h3>フォロー一覧</h3>
-<% @users.each do |user| %>
-  <%= link_to user.name, user %>
-  <br>
-<% end %>
+<div class="row">
+  <aside class="col-md-4">
+    <%= render 'user_info' %>
+  </aside>
+  <div class="col-md-8">
+    <h3>フォロー一覧</h3>
+    <ul>
+      <% @users.each do |user| %>
+        <li><%= link_to user.name, user %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
